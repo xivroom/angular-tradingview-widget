@@ -10,7 +10,7 @@ declare const TradingView: any;
   `,
   styles: []
 })
-export class TradingviewWidgetComponent implements OnInit {
+export class TradingviewWidgetComponent implements AfterViewInit {
 
   private _widgetConfig!: ITradingViewWidget;
   private _defaultConfig: ITradingViewWidget = {
@@ -51,7 +51,7 @@ export class TradingviewWidgetComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.appendScript(this.initWidget.bind(this));
   }
 
